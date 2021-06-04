@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <math.h>
 
-float mc_pi(int n)
 
-{ /*float a = frandom();
-   printf("%f", a);*/
+
+float mc_pi(int n)
+{ 
   float pi;
   int circle=0;
   int sqr=0;
@@ -17,9 +17,9 @@ float mc_pi(int n)
        float x = (float)q/(float)RAND_MAX;
        long int p = random();
        float y = (float)p/(float)RAND_MAX;
-       /*x=frandom();
-       y=frandom();*/
-       if((x*x)+(y*y)<=1)
+       
+       float dis = sqrt((x*x)+(y*y));
+       if(dis<=1)
         {
          circle=circle+1;
         }
@@ -28,7 +28,7 @@ float mc_pi(int n)
           sqr=sqr+1;
         }
       }
-    pi=(float)4*circle/(sqr+circle);
+    pi=((float)(4*circle))/((float)(sqr+circle));
     return pi;
  } 
     
